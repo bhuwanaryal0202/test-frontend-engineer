@@ -6,7 +6,7 @@ import { Product } from '@/types/product';
 import { api } from '@/utils/api';
 import { ProductCard } from '@/components/product/ProductCard';
 import { Button } from '@/components/ui/Button';
-import { formatPrice } from '@/utils/formatting';
+
 
 export default function HomePage() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -142,7 +142,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">
               <Image
-                src="/special-offer.jpg"
+                src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
                 alt="Special Offer"
                 fill
                 className="object-cover"

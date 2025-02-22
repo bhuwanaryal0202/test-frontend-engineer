@@ -43,7 +43,7 @@ async function fetchJson<T>(url: string): Promise<T> {
     return data;
   } catch (error) {
     if (error instanceof Error && error.name === 'AbortError') {
-      throw new ApolloError({ message: 'Request timeout' });
+      throw new ApolloError({ errorMessage: 'Request timeout' });
     }
     throw new ApolloError(
 { errorMessage: error instanceof Error ? error.message : 'Network error' }
