@@ -20,7 +20,7 @@ const categories: Category[] = [
     id: 'electronics',
     name: 'Electronics',
     description: 'Latest gadgets and electronic devices',
-    image: '/categories/electronics.jpg',
+    image: 'https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg',
     productCount: 156,
     subcategories: [
       { name: 'Smartphones', count: 45 },
@@ -32,7 +32,7 @@ const categories: Category[] = [
     id: 'fashion',
     name: 'Fashion',
     description: 'Trendy clothing and accessories',
-    image: '/categories/fashion.jpg',
+    image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg',
     productCount: 284,
     subcategories: [
       { name: "Men's Wear", count: 98 },
@@ -41,53 +41,29 @@ const categories: Category[] = [
     ],
   },
   {
-    id: 'home-living',
-    name: 'Home & Living',
-    description: 'Furniture and home decoration',
-    image: '/categories/home-living.jpg',
+    id: 'jewelery',
+    name: 'Jewelery',
+    description: 'Fine jewelry and accessories',
+    image: 'https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg',
     productCount: 198,
     subcategories: [
-      { name: 'Furniture', count: 67 },
-      { name: 'Decor', count: 89 },
-      { name: 'Kitchen', count: 42 },
+      { name: 'Necklaces', count: 67 },
+      { name: 'Rings', count: 89 },
+      { name: 'Earrings', count: 42 },
     ],
   },
   {
     id: 'beauty',
     name: 'Beauty',
     description: 'Cosmetics and personal care',
-    image: '/categories/beauty.jpg',
+    image: 'https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg',
     productCount: 167,
     subcategories: [
       { name: 'Skincare', count: 56 },
       { name: 'Makeup', count: 78 },
       { name: 'Fragrances', count: 33 },
     ],
-  },
-  {
-    id: 'sports',
-    name: 'Sports & Outdoor',
-    description: 'Sports equipment and outdoor gear',
-    image: '/categories/sports.jpg',
-    productCount: 145,
-    subcategories: [
-      { name: 'Equipment', count: 48 },
-      { name: 'Clothing', count: 67 },
-      { name: 'Accessories', count: 30 },
-    ],
-  },
-  {
-    id: 'books',
-    name: 'Books & Media',
-    description: 'Books, movies, and music',
-    image: '/categories/books.jpg',
-    productCount: 234,
-    subcategories: [
-      { name: 'Books', count: 156 },
-      { name: 'Movies', count: 45 },
-      { name: 'Music', count: 33 },
-    ],
-  },
+  }
 ];
 
 export default function CategoriesPage() {
@@ -197,4 +173,4 @@ export async function getStaticProps() {
       description: 'Browse all product categories in our store',
     },
   };
-} 
+}
