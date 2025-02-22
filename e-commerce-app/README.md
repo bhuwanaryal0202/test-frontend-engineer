@@ -1,40 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# E-commerce Application
+
+A modern e-commerce application built with Next.js, featuring a responsive design, REST API integration, and GraphQL implementation attempts. The application provides a seamless shopping experience with features like product browsing, cart management, and category filtering.
+
+## Features
+
+- Responsive design optimized for all device sizes
+- Product catalog with category filtering
+- Shopping cart functionality with persistent storage
+- Product search and filtering capabilities
+- Dynamic product pages with detailed information
+- Category-based navigation
+- Newsletter subscription form
+- Special offers and featured products sections
+
+## Technology Stack
+
+- **Frontend Framework**: Next.js with TypeScript
+- **Styling**: Tailwind CSS for responsive design
+- **State Management**: React Context API for cart management
+- **API Integration**: 
+  - REST API (Fake Store API) for product data
+  - GraphQL implementation for enhanced data fetching (partially implemented)
+- **UI Components**: Custom components with Lucide React icons
+- **Image Optimization**: Next.js Image component for optimal loading
+
+## Architecture
+
+### REST API Integration
+
+The application primarily uses the Fake Store API for data fetching. The integration is handled through a centralized API utility (`src/utils/api.ts`) that provides methods for:
+
+- Fetching all products
+- Getting individual product details
+- Filtering products by category
+- Managing product ratings and reviews
+
+### GraphQL Implementation
+
+While the application currently relies on REST API, there's a partial GraphQL implementation that demonstrates the potential for more efficient data fetching. The GraphQL layer includes:
+
+- Schema definitions for products and categories
+- Basic queries for product listing
+- Type definitions for the data model
+
+## Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── context/        # React Context providers
+├── graphql/        # GraphQL schemas and queries
+├── pages/          # Next.js pages and API routes
+├── styles/         # Global styles and Tailwind config
+├── types/          # TypeScript type definitions
+└── utils/          # Utility functions and API helpers
+```
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd e-commerce-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Development Decisions and Trade-offs
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### API Integration Strategy
 
-## Learn More
+- **REST vs GraphQL**: Initially started with REST API for quick implementation and familiar development pattern. GraphQL was partially implemented to demonstrate the potential for more efficient data fetching but wasn't fully adopted due to time constraints.
 
-To learn more about Next.js, take a look at the following resources:
+- **Data Fetching**: Implemented client-side data fetching for better SEO and initial page load performance. This decision allows for dynamic updates but may impact performance on slower connections.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### State Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Chose React Context over Redux for simplicity and sufficient functionality for current requirements
+- Cart state persists through page refreshes using local storage
 
-## Deploy on Vercel
+### UI/UX Decisions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Implemented skeleton loading states for better user experience during data fetching
+- Used Tailwind CSS for rapid development and consistent styling
+- Optimized images using Next.js Image component for better performance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### Known Limitations
+
+- Limited error handling for API failures
+- No authentication implementation
+- Cart data is stored locally and not synced with a backend
+- GraphQL implementation is partial and not fully utilized
+
+## Future Improvements
+
+- Complete GraphQL integration for more efficient data fetching
+- Implement user authentication and profile management
+- Add server-side cart synchronization
+- Enhance error handling and offline capabilities
+- Implement automated testing
+- Add payment processing integration
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

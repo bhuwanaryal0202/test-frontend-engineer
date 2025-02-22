@@ -70,14 +70,14 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { name: 'Electronics', image: 'https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg' },
-              { name: 'Fashion', image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg' },
-              { name: 'Home & Living', image: 'https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg' },
-              { name: 'Beauty', image: 'https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg' }
+              { name: 'Electronics', slug: 'electronics', image: 'https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg' },
+              { name: "Men's Fashion", slug: 'mens-clothing', image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg' },
+              { name: "Women's Fashion", slug: 'womens-clothing', image: 'https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg' },
+              { name: 'Jewelry', slug: 'jewelery', image: 'https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg' }
             ].map((category) => (
               <Link 
                 key={category.name} 
-                href={`/categories/${category.name.toLowerCase()}`}
+                href={`/categories/${category.slug}`}
                 className="group relative overflow-hidden rounded-lg aspect-square"
               >
                 <Image
@@ -108,7 +108,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {isLoading
               ? Array(4).fill(null).map((_, index) => (
                   <div key={index} className="animate-pulse">
@@ -137,7 +137,9 @@ export default function HomePage() {
                 Get up to 40% off on our special edition products. Limited stock available.
               </p>
               <div className="flex gap-4">
-                <Button size="lg">Shop Now</Button>
+                <Link href="http://localhost:3000/products/5">
+                  <Button size="lg">Shop Now</Button>
+                </Link>
               </div>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">

@@ -21,19 +21,19 @@ const categoryConfig: { [key: string]: {
     image: 'https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg',
     apiCategory: 'electronics'
   },
-  'fashion': {
+  'mens-clothing': {
     title: "Men's Fashion",
     description: 'Shop the latest trends in men\'s fashion',
     image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg',
     apiCategory: "men's clothing"
   },
-  'fashion-women': {
+  'womens-clothing': {
     title: "Women's Fashion",
     description: 'Explore our women\'s fashion collection',
-    image: 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg',
+    image: 'https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg',
     apiCategory: "women's clothing"
   },
-  'jewelry': {
+  'jewelery': {
     title: 'Jewelry',
     description: 'Browse our elegant jewelry collection',
     image: 'https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg',
@@ -131,9 +131,9 @@ export default function CategoryPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col sm:flex-row gap-8">
           {/* Filters Sidebar */}
-          <div className="lg:w-64 flex-shrink-0">
+          <div className="sm:w-64 flex-shrink-0">
             <Card>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -207,7 +207,7 @@ export default function CategoryPage() {
                 <p className="text-gray-600">No products found in this category.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {products.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
