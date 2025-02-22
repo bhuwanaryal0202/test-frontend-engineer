@@ -40,7 +40,7 @@ export function CartItem({ item }: CartItemProps) {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => updateQuantity(product.id, quantity - 1)}
+            onClick={() => updateQuantity(Number(product.id), quantity - 1)}
             disabled={quantity <= 1}
           >
             <Minus className="w-4 h-4" />
@@ -53,7 +53,7 @@ export function CartItem({ item }: CartItemProps) {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => updateQuantity(product.id, quantity + 1)}
+            onClick={() => updateQuantity(Number(product.id), quantity + 1)}
           >
             <Plus className="w-4 h-4" />
           </Button>
@@ -66,7 +66,7 @@ export function CartItem({ item }: CartItemProps) {
           <Button
             variant="destructive"
             size="sm"
-            onClick={() => removeItem(product.id)}
+            onClick={() => removeItem(Number(product.id))}
             className="mt-2"
           >
             <Trash2 className="w-4 h-4" />
